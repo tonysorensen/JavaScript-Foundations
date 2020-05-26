@@ -65,7 +65,15 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-
+function mortgageCalculator(principal, interestRate, years){
+    let name = "Tony";
+    let monthlyInterestRate = interestRate/12;
+    let periods = years*12;
+    let numerator = monthlyInterestRate * Math.pow(( 1 + monthlyInterestRate),(periods));
+    let denominator= Math.pow((1 + monthlyInterestRate),(periods))-1;
+    let monthlyRate = principal * (numerator/denominator);
+    return name + ", your monthly rate is $" + monthlyRate.toFixed(2)
+    }
 
 
 
