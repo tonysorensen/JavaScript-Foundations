@@ -6,6 +6,7 @@
 let principal = 200000;
 let interestRate= 0.05;
 let years = 30;
+let name = Tony;
 
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
