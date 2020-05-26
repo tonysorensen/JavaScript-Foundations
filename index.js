@@ -6,7 +6,7 @@
 let principal = 200000;
 let interestRate= 0.05;
 let years = 30;
-let name = Tony;
+let name = "Tony";
 
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
@@ -33,6 +33,8 @@ let numerator = monthlyInterestRate * Math.pow(( 1 + monthlyInterestRate),(perio
 let denominator= Math.pow((1 + monthlyInterestRate),(periods))-1;
 let monthlyRate = principal * (numerator/denominator);
 
+console.log(monthlyRate.toFixed(2));
+
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
@@ -40,6 +42,18 @@ let monthlyRate = principal * (numerator/denominator);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortgageCalculator(){
+let principal = 200000;
+let interestRate= 0.05;
+let years = 30;
+let name = "Tony";
+let monthlyInterestRate = interestRate/12;
+let periods = years*12;
+let numerator = monthlyInterestRate * Math.pow(( 1 + monthlyInterestRate),(periods));
+let denominator= Math.pow((1 + monthlyInterestRate),(periods))-1;
+let monthlyRate = principal * (numerator/denominator);
+return name + ", your monthly rate is $" + monthlyRate.toFixed(2)
+}
 
 
 
