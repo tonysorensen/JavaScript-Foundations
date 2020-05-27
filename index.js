@@ -117,6 +117,37 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+function variableInterestRate(principal, interestRate, years, creditScore) {
+  //if creditScore > 740 then interestRate=interestRate-0.005
+  if (creditScore > 740) {
+    interestRate = interestRate - 0.005;
+  }
+  //if creditScore < 660 then interestRate=interestRate+0.005
+  else if (creditScore < 660) {
+    interestRate = interestRate + 0.005;
+  }
+  //if creditScore >=660 && <=740 then monthlyInterestRate=monthlyInterestRate
+  else if (creditScore >= 660 && creditScore <= 740) {
+    interestRate = interestRate;
+  }
+
+  let variableRate = interestRate - 0.02;
+  for (let i = variableRate; i <= interestRate + 0.02; i += 0.005) {
+    let name = "Tony";
+
+    let monthlyInterestRate = i / 12;
+
+    let periods = years * 12;
+
+    let numerator =
+      monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
+    let denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+    let monthlyRate = principal * (numerator / denominator);
+  
+    console.log(name + ", with an interest rate of " + i.toFixed(3) + ", your monthly rate is $" + Math.round(monthlyRate)
+    );
+  }
+}
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
